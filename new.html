@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <style>
+            .square{
+                width:200px;
+                height:200px;
+                background:blue;
+                margin:20px;
+            }
+            .borderRadius{
+                border-radius: 50%;
+                -moz-border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -ms-border-radius: 50%;
+            }
+            .colorChanger{
+                background:khaki
+            }
+        </style>
+    </head>
+    <body>
+        <button id="borderRadiusButton">border radius</button>
+        <button id="colorChangerButton">color changer</button>
+        <button id="backToDefaultButton">back to default</button>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <script>
+            let borderRadiusButton = document.getElementById("borderRadiusButton")
+            let colorChangerButton = document.getElementById("colorChangerButton")
+            let backToDefaultButton = document.getElementById("backToDefaultButton")
+            let elements = document.querySelectorAll(".square")
+            borderRadiusButton.addEventListener("click" , function(){
+                elements.forEach(function(item){
+                    item.classList.add("borderRadius")
+                })
+            })
+            colorChangerButton.addEventListener("click" , function(){
+                elements.forEach(function(item){
+                    item.classList.add("colorChanger")
+                })
+            })
+            backToDefaultButton.addEventListener("click" , function(){
+                elements.forEach(function(item){
+                    item.classList.remove("colorChanger")
+                    item.classList.remove("borderRadius")
+                })
+            })
+        </script>
+    </body>
+</html>
